@@ -1,0 +1,81 @@
+" leader键设置
+let mapleader = " "
+
+" 三方插件启用
+" 启用vim surround功能
+set surround
+" 此插件没工作？
+set easymotion
+
+" vim设置
+" 启用multi cursor
+set multiple-cursors
+" 显示行号
+set nu
+" 显示相对行号
+set rnu
+" 高亮搜索
+set hlsearch
+" 自动定位到输入中的字符串，不需要回车搜索
+set incsearch
+" 显示当前的模式
+set showmode
+" 共享系统粘贴板
+set clipboard=unnamed
+set clipboard+=ideaput
+" 搜索时智能匹配大小写
+set ignorecase smartcase
+
+" 插入模式下返回normal模式
+inoremap jk <Esc>
+
+" 保存
+noremap <leader>w <ESC>:action AddToFavoritesPopup<CR>
+
+
+" 标签相关
+" 标签切换
+noremap H gT
+noremap L gt
+" 关闭当前标签
+noremap <leader>tc :wq<CR>
+" 关闭其余标签
+noremap <leader>tx <ESC>:action CloseAllEditorsButActive<CR>
+
+" 语言相关 lsp
+" 智能提示
+noremap <leader>la <ESC>:action ShowIntentionActions<CR>
+" 错误描述
+noremap <leader>le <ESC>:action ShowErrorDescription<CR>
+" 查看代码结构
+noremap <leader>ls <ESC>:action FileStructurePopup<CR>
+" 查看用法
+noremap <leader>lu <ESC>:action ShowUsages<CR>
+" 查看方法参数信息
+noremap <leader>lp <ESC>:action ParameterInfo<CR>
+" 代码生成
+noremap <leader>lg <ESC>:action Generate<CR>
+" 跳转到下一个错误
+noremap <leader>lj <ESC>:action GotoNextError<CR>
+" 跳转到上一个错误
+noremap <leader>lk <ESC>:action GotoPreviousError<CR>
+" 跳转到实现
+noremap gs <ESC>:action GotoImplementation<CR>
+" 跳转到定义
+noremap gd <ESC>:action GotoDeclaration<CR>
+
+" 窗口相关方法
+" 隐藏左侧窗口
+noremap <leader>h <ESC>:action HideAllWindows<CR>
+
+" 在系统文件夹中显示文件
+noremap <leader>o <ESC>:action ShowFilePath<CR>
+
+
+" 翻译
+noremap gt <ESC>:action $EditorTranslateAction<CR>
+
+" previous method
+noremap [[ <ESC>:action MethodUp<CR>
+" next method
+noremap ]] <ESC>:action MethodDown<CR>
